@@ -59,4 +59,9 @@ span {
   background: #52aae5;
   padding: 6px;
   min-width: 65px;
+}
+.promo__expired {
+  color: #222;
+  margin: 0 auto;
+  font-weight: 400;
 }/*# sourceMappingURL=style.css.map */
