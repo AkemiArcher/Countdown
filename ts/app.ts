@@ -1,11 +1,11 @@
 const items = document.querySelectorAll<HTMLParagraphElement>(
-  ".promo__timer-item > h4",
+  ".promo__timer-item > div",
 );
 
 const countdownElement =
   document.querySelector<HTMLDivElement>(".promo__timer");
 
-let countdownDate: number = new Date(2026, 7, 30, 22, 23, 0).getTime();
+let countdownDate: number = new Date(2027, 7, 30, 22, 56, 0).getTime();
 
 function getCountdownTime() {
   const now: number = new Date().getTime();

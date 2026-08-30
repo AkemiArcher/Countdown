@@ -1,7 +1,7 @@
 "use strict";
-const items = document.querySelectorAll(".promo__timer-item > h4");
+const items = document.querySelectorAll(".promo__timer-item > div");
 const countdownElement = document.querySelector(".promo__timer");
-let countdownDate = new Date(2026, 7, 30, 22, 23, 0).getTime();
+let countdownDate = new Date(2027, 7, 30, 22, 56, 0).getTime();
 function getCountdownTime() {
     const now = new Date().getTime();
     const distance = countdownDate - now;
