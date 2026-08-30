@@ -1,3 +1,71 @@
+@import "mixins";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+$timerBackground: #52aae5;
+$baseFont: "Roboto", sans-serif;
+
+html {
+	font-size: 16px;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 body {
 	background-color: #f1f5f8;
+	font-family: $baseFont;
+}
+
+.container {
+	padding-top: 36px;
+	@include min-max(auto, 800px);
+}
+span {
+	display: block;
+}
+.promo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	&__banner {
+	}
+
+	&__banner-img {
+		height: 100%;
+		width: 100%;
+	}
+
+	&__title, &__subtitle {
+		font-weight: 500;
+		text-align: center;
+		text-transform: capitalize;
+	}
+
+	&__text {
+		font-size: 1.2rem;
+		font-weight: 300;
+		margin: 10px 0;
+	}
+
+	&__timer {
+		display: flex;
+		justify-content: space-between;
+		text-align: center;
+		font-size: 1rem;
+		color: #f1f5f8;
+		min-width: 320px;
+	}
+
+	&__timer-item {
+		background: $timerBackground;
+		padding: 6px;
+		min-width: 65px;
+	}
+
+	&__timer-value {
+	}
+
+	&__timer-label {
+	}
 }
