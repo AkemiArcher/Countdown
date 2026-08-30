@@ -1,6 +1,7 @@
 "use strict";
 const items = document.querySelectorAll(".promo__timer-item > h4");
-let countdownDate = new Date(2027, 11, 18, 10, 0, 0).getTime();
+const countdownElement = document.querySelector(".promo__timer");
+let countdownDate = new Date(2026, 7, 30, 22, 23, 0).getTime();
 function getCountdownTime() {
     const now = new Date().getTime();
     const distance = countdownDate - now;
@@ -12,13 +13,16 @@ function getCountdownTime() {
     let minutes = Math.floor((distance % oneHour) / oneMinute);
     let seconds = Math.floor((distance % oneMinute) / 1000);
     const values = [days, hours, minutes, seconds];
-    console.log(values);
     items.forEach((item, index) => {
         const value = values[index];
         item.textContent = value !== undefined ? String(value) : "";
     });
+    if (distance < 0) {
+        clearInterval(refreshing);
+        if (countdownElement) {
+            countdownElement.innerHTML = `<h4 class="promo__expired">Время вышло</h4>`;
+        }
+    }
 }
+let refreshing = setInterval(getCountdownTime, 1000);
 getCountdownTime();
-setInterval(() => {
-    getCountdownTime();
-}, 1000);
